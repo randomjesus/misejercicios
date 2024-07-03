@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <script src="calculadoraimc.js"></script>
+</head>
+<body>
+    hi!
+    <div id="nombre"></div>
+    <div id="altura"></div>
+    <div id="peso"></div>
+    <div id="imc"></div>
+</body>
+</html>
+<script>
+
+    let nombre = prompt("nombre?", "jesus")
+    let altura = prompt("altura?", "170")
+    let peso = prompt("peso?", "80")
+    document.getElementById("nombre").innerHTML = nombre
+    document.getElementById("altura").innerHTML = altura 
+    document.getElementById("peso").innerHTML = peso 
+
+    let imc = calcularIMC(peso, altura);
+    document.getElementById("imc").innerHTML = imc;
+</script>

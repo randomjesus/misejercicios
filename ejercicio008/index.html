@@ -20,7 +20,7 @@
          </div>
         <!-- send  -->
          <div class="contenido">
-            <button onclick=evalCredentials()>Validate</button>
+            <button onclick=evalCredentials() id="ibutton">Validate</button>
          </div>    
     </div>
     <br>
@@ -43,34 +43,6 @@
         let email = document.querySelector("#iEmail").value;
         let password = document.querySelector("#iPassword").value;
         formatedPassword = password.toLowerCase()
-
-        // switch (true){
-        //     case email.indexOf('@')>0 && email.indexOf('.')>0 && email.length>5:
-        //         document.querySelector("#resultadoEmail").innerHTML=`The email is correct!`;
-        //         break;
-        //     default:
-        //         document.querySelector("#resultadoEmail").innerHTML = "The email must contain '@', a '.', and be at least 5 characters long.";
-        //         break;
-        //
-        // }
-
-        // switch (true){
-        //     case password.indexOf('a')<0 && password.indexOf('ibm')<0 && password.length>6:
-        //         document.querySelector("#resultadoPassword").innerHTML=`The password is correct!`;
-        //         break;
-        //     default:
-        //         document.querySelector("#resultadoPassword").innerHTML = "The password must not contain 'a' or 'A', the word 'IBM' in any case variation, and must be at least 6 characters long.";
-        //
-        //         break;
-        //
-        // }
-        // console.log(email.indexOf('@')>0)
-        // console.log(email.indexOf('.')>0)
-        // console.log(email.length>5)
-        // console.log('pass')
-        // console.log(password.indexOf('a')<0)
-        // console.log(password.indexOf('ibm')<0)
-        // console.log(password.length>6)
 
         if (email.indexOf('@')>0 && email.indexOf('.')>0 && email.length>5) {
           document.querySelector("#resultadoEmail").innerHTML=`The email is correct!`;

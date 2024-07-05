@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calculadoraimc.js"></script>
+</head>
+
+<body>
+    <div id="principal">
+        <div class="contenido">
+            <!-- nombre -->
+            <input type="text" name="" id="iNombre" placeholder="Nombre" value="js">
+            <span id="iNombreError"> </span>
+        </div>
+        <div class="contenido">
+            <!-- age -->
+            <input type="text" name="" id="iAge" placeholder="age" value="15">
+            <span id="iAgeError"> </span>
+        </div>
+        <div class="contenido">
+            <!-- altura -->
+            <input type="number" name="" id="iAltura" placeholder="Altura" value="17">
+            <span id="iHeightError"></span>
+        </div>
+        <div class="contenido">
+            <!-- peso -->
+            <input type="number" name="" id="iPeso" placeholder="Peso" value="20">
+            <span id="iWeightError"></span>
+        </div>
+        <div class="contenido" >
+            <!-- calcular -->
+            <button onclick="calcular()">Calcular IMC</button>
+        </div>
+        <div class="contenido" id="resultado">
+            <!-- resultado -->
+            Resultado
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function calcular(){
+        let altura = document.getElementById("iAltura").value;
+        let peso = document.getElementById("iPeso").value;
+        
+        let imc = calcularIMC(peso, altura)
+        imc = Math.round(imc)
+        document.getElementById("resultado").innerHTML=imc;
+        //validation
+        // name
+        let name = document.querySelector('#iNombre').value;
+        if (name.length<3){
+            writeError("must be at least 3 characters", "#iNombreError")
+        } else {
+            writeError("", "#iNombreError")
+        }
+        // age
+        let age = document.querySelector('#iAge').value;
+        if (age <= 18) {
+            writeError("must be +18", "#iAgeError")
+        } else {
+            writeError("", "#iAgeError")
+        }
+        // height
+        if (altura <= 100 || altura >= 250){
+            writeError("must be between 100-250", "#iHeightError")
+        } else {
+            writeError("", "#iHeightError")
+        }
+        // weight
+        if (peso <= 40 || peso >= 200){
+            writeError("must be between 40-200", "#iWeightError")
+        } else {
+            writeError("", "#iWeightError")
+        }
+        console.log(altura);
+        console.log(altura <= 100);
+        console.log(altura <= 100 || altura >= 250);
+    }
+
+
+    function writeError(mensaje, identificador)
+    {
+        document.querySelector(identificador).innerHTML=mensaje;
+    }
+    
+</script>

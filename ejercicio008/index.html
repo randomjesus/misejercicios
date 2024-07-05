@@ -11,18 +11,28 @@
         <!-- email -->
          <div class="contenido">
             <input type="text" id="iEmail" placeholder="Email" value="testEmail@test.com">
+            <span class="error" id="error-email"></span>
          </div>
         <!-- password -->
          <div class="contenido">
             <input type="text" name="" id="iPassword" placeholder="Password" value="testPsswod">
+            <span class="error" id="error-pwd"></span>
          </div>
         <!-- send  -->
          <div class="contenido">
-            <button onclick=evalCredentials()>Send</button>
+            <button onclick=evalCredentials()>Validate</button>
          </div>    
+    </div>
+    <br>
+    <div id="details">
         <!-- evaluation -->
-         <div class="contenido" id="resultadoEmail">Resultado Email</div>
-         <div class="contenido" id="resultadoPassword">Resultado Password</div>
+         <div class="contenido">
+            <strong>
+            Validation details:
+            </strong>
+         </div>
+         <div class="contenido" id="resultadoEmail">Email Result</div>
+         <div class="contenido" id="resultadoPassword">Password Result</div>
     </div>
    </div> 
 </body>
@@ -65,13 +75,24 @@
         if (email.indexOf('@')>0 && email.indexOf('.')>0 && email.length>5) {
           document.querySelector("#resultadoEmail").innerHTML=`The email is correct!`;
         } else {
-          document.querySelector("#resultadoEmail").innerHTML = "The email must contain '@', a '.', and be at least 5 characters long.";
+          escribirError("#resultadoEmail", "The email must contain '@', a '.', and be at least 5 characters long.")
+          escribirError("#error-email", "The email is not valid");
+         //  document.querySelector("#resultadoEmail").innerHTML = "The email must contain '@', a '.', and be at least 5 characters long.";
+         //  document.querySelector("#error-email").innerHTML="The email doesn't work"
         }
 
        if (formatedPassword.indexOf('a')<0 && formatedPassword.indexOf('ibm')<0 && password.length>6) {
            document.querySelector("#resultadoPassword").innerHTML=`The password is correct!`;
        } else {
-           document.querySelector("#resultadoPassword").innerHTML = "The password must not contain 'a' or 'A', the word 'IBM' in any case variation, and must be at least 6 characters long.";
-       }
+         //   document.querySelector("#resultadoPassword").innerHTML = "The password must not contain 'a' or 'A', the word 'IBM' in any case variation, and must be at least 6 characters long.";
+           escribirError("#resultadoPassword", "The password must not contain 'a' or 'A', the word 'IBM' in any case variation, and must be at least 6 characters long.")
+         //   document.querySelector("#error-pwd").innerHTML="The password doesn't work"
+           escribirError("#error-pwd", "The password is not valid");
+    }
+
+    function escribirError(identificador, mensaje){
+         document.querySelector(identificador).innerHTML=mensaje;
+    }
+   
     }
 </script>

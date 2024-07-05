@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credenciales</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <div id="principal">
-    <div class="contenido"></div>
         <!-- email -->
-         <div>
+         <div class="contenido">
             <input type="text" id="iEmail" placeholder="Email" value="testEmail@test.com">
          </div>
         <!-- password -->
-         <div>
+         <div class="contenido">
             <input type="text" name="" id="iPassword" placeholder="Password" value="testPsswod">
          </div>
         <!-- send  -->
-         <div>
+         <div class="contenido">
             <button onclick=evalCredentials()>Send</button>
          </div>    
         <!-- evaluation -->
-         <div id="resultadoEmail">Resultado Email</div>
-         <div id="resultadoPassword">Resultado Password</div>
-    <div class="contenido"></div>
+         <div class="contenido" id="resultadoEmail">Resultado Email</div>
+         <div class="contenido" id="resultadoPassword">Resultado Password</div>
+    </div>
    </div> 
 </body>
 </html>
@@ -68,7 +68,7 @@
           document.querySelector("#resultadoEmail").innerHTML = "The email must contain '@', a '.', and be at least 5 characters long.";
         }
 
-       if (password.indexOf('a')<0 && password.indexOf('ibm')<0 && password.length>6) {
+       if (formatedPassword.indexOf('a')<0 && formatedPassword.indexOf('ibm')<0 && password.length>6) {
            document.querySelector("#resultadoPassword").innerHTML=`The password is correct!`;
        } else {
            document.querySelector("#resultadoPassword").innerHTML = "The password must not contain 'a' or 'A', the word 'IBM' in any case variation, and must be at least 6 characters long.";

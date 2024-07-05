@@ -7,6 +7,22 @@
     margin: auto;
 }
 
+#details {
+    width: 200px;
+    text-align: center;
+    border: black 1px solid;
+    background-color: gray;
+    border-radius: 10px;
+    padding: 1px 9px 1px 9px;
+    margin: auto;
+    font-size: 80%;
+    font-family:'Courier New', Courier, monospace; 
+    color: greenyellow;
+    line-height: 0.8;
+    text-shadow: 3px 3px 2px black;
+    box-shadow: 5px 5px 15px 5px black;
+}
+
 .contenido {
     margin: 5px;
     text-align: center;
@@ -16,4 +32,8 @@
 
 input {
     padding: 5px;
+}
+
+.error {
+    color: red;
 }

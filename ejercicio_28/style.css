@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+#restaurantes {
+    display: flex;
+    justify-content: center;
+}
+.restaurante {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow: hidden;
+    width: 300px;
+    max-width: 100%;
+}
+.restaurante img {
+    width: 100%;
+    height: auto;
+}
+.restaurante .nombre {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 15px;
+}
+.restaurante .direccion, .restaurante .tipoComida, .restaurante .precioMedio, .restaurante .puntuacion {
+    color: #777;
+    margin: 0 15px 15px;
+}
+.restaurante .direccion::before {
+    content: '🏠';
+    margin-right: 5px;
+}
+.restaurante .tipoComida::before {
+    content: '🍴';
+    margin-right: 5px;
+}
+.restaurante .precioMedio {
+    display: flex;
+    align-items: center;
+}
+.precioMedio::before {
+    content: '💳';
+    margin-right: 5px;
+}
+.restaurante .puntuacion {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.puntuacion::before {
+    content: '❤️';
+    margin-right: 5px;
+    color: red;
+}
+.restaurante:hover {
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.5s ease;
+}

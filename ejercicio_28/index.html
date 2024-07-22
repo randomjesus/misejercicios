@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="restaurantes">
+      <div class="restaurante">
+        <div class="imagen">
+          <img src="images/r1.jpg" alt="Restaurant Image" />
+        </div>
+        <div class="descripcion">
+          <div class="nombre">Mandrake Greek Street Food</div>
+          <div class="nombre"></div>
+          <div class="direccion">Calle del Almendro, 21, 28005 Madrid</div>
+          <div class="precioMedio">Precio medio 15 €</div>
+          <div class="tipoComida">Griego</div>
+          <div class="puntuacion">9,3</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function crearFila(imagen, nombre, estilo, precio) {
+    let divRestaurante = document.createElement("div");
+    divRestaurante.classList.add("restaurante");
+    document.querySelector("#restaurante").appendChild(divRestaurante);
+  }
+
+  crearFila("images/r1.jpg", "Mandrake Greek Street Food", "Griego", "15€");
+</script>

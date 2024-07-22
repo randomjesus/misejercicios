@@ -1,0 +1,13 @@
+.rojo {
+    color: red;
+}
+
+.verde {
+    color: green;
+}
+
+.negrita{
+    font-weight: bolder;
+    /*disapear*/
+    /* display: none; */
+}

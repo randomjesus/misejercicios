@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejemplo classList</title>
+</head>
+<body>
+   <span id="mensaje">Introduce el nombre:</span>
+   <input type="text" id="nombre" placeholder="Nombre"> 
+   <p>Lorem ipsum dolor sit, amet <span class="rojo">consectetur</span> adipisicing elit. Inventore natus tempora ullam tempore vel quia illum vero rem! Nemo deserunt odit, suscipit obcaecati velit beatae quaerat doloribus id explicabo facilis.</p>
+</body>
+</html>
+<script>
+    document.querySelector('#nombre').addEventListener('keydown', (evento)=>{
+        // console.log(evento.key);
+        const texto = document.querySelector("#nombre").value;
+        if (texto.length == 5) {
+           document.querySelector('#mensaje').classList.add('rojo')
+        }
+        if (texto.length >= 7) {
+           document.querySelector('#mensaje').classList.add('negrita')
+        } else {
+           document.querySelector('#mensaje').classList.remove('negrita')
+        }
+
+        if (texto.length >= 10) {
+           document.querySelector('#mensaje').classList.replace('rojo', 'verde')
+        } else {
+           document.querySelector('#mensaje').classList.replace('verde', 'rojo')
+        }
+
+        if (texto.length >= 12) {
+           document.querySelector('#mensaje').style.textTransform = 'uppercase'
+        } else {
+           document.querySelector('#mensaje').style.textTransform = 'none'
+        }
+    })
+</script>

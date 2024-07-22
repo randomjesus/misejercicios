@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Creaci'on de elementos en DOM</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let encabezado = document.createElement("h1");
+    document.querySelector('body').appendChild(encabezado);
+
+    let textoEncabezado = document.createTextNode('Seccion principal')
+    encabezado.appendChild(textoEncabezado)
+
+    // creacion de un atributo creando el metodo
+    let atributoEncabezado = document.createAttribute("class")
+    atributoEncabezado.value = 'rojo';
+    encabezado.setAttributeNode(atributoEncabezado)
+
+    // creacion del atributo mediante el m'etodo setatribute
+    encabezado.setAttribute('id', 'encabezado1')
+
+    // // en los 80
+    setInterval(()=>{
+    //     if (atributoEncabezado.value === 'verde') {
+    //         atributoEncabezado.value = 'rojo';
+    //     } else {
+    //         atributoEncabezado.value = 'verde';
+    //     }
+    atributoEncabezado.value = (atributoEncabezado.value === 'verde') ? 'rojo' : 'verde'
+    }, 500)
+
+    // actualidad
+</script>

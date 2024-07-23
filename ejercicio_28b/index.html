@@ -41,11 +41,19 @@
     handleError
   );
 
-  function processChampions(data) {
-    arrayChampions = data;
-    arrayChampions.forEach((champion) => {
+  function generateRowsChampions(champions){
+    champions.forEach((champion) => {
       createRow(champion.icon, champion.name, champion.title, champion.key, champion.tags);
     });
+  }
+
+  function processChampions(data) {
+    arrayChampions = data;
+
+    generateRowsChampions(arrayChampions)
+    // arrayChampions.forEach((champion) => {
+    //   createRow(champion.icon, champion.name, champion.title, champion.key, champion.tags);
+    // });
   }
 
   function handleError(error) {
@@ -64,8 +72,9 @@
     // console.log('filteredChampions: ' + filteredChampions);
 
     document.querySelector("#champions").innerHTML = "";
-    filteredChampions.forEach((champion) => {
-      createRow(champion.icon, champion.name, champion.title, champion.key, champion.tags);
-    });
+    generateRowsChampions(filteredChampions)
+    // filteredChampions.forEach((champion) => {
+    //   createRow(champion.icon, champion.name, champion.title, champion.key, champion.tags);
+    // });
   });
 </script>

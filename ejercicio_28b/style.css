@@ -29,6 +29,11 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s; /* Smooth transition for background color change */
+  }
+
+  .champion:hover {
+    background-color: #2a2a2a; /* Slightly lighter color on hover */
   }
   
   .champion .image {
@@ -108,3 +113,15 @@ body {
 .filter input[type="text"]::placeholder {
   color: #a0a0a0;
 } 
+
+
+.champion .image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s; /* Smooth transition for the size change */
+}
+
+.champion .image img:hover {
+  transform: scale(1.2); /* Increase size by 10% on hover */
+}

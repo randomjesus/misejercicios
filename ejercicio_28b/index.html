@@ -52,16 +52,16 @@
     console.error("Error:", error);
   }
 
-  // find champion
+  // champion filter
 
   document.querySelector("#iFilter").addEventListener("keyup", () => {
-    let text = document.querySelector("#iFilter").value;
-    console.log('text: ' + text);
+    let text = document.querySelector("#iFilter").value.toLowerCase();
+    // console.log('text: ' + text);
 
     let filteredChampions = arrayChampions.filter(champion => {
-      return champion.name.includes(text);
+      return champion.name.toLowerCase().startsWith(text);
     });
-    console.log('filteredChampions: ' + filteredChampions);
+    // console.log('filteredChampions: ' + filteredChampions);
 
     document.querySelector("#champions").innerHTML = "";
     filteredChampions.forEach(champion => {

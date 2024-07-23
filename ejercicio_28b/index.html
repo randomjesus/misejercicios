@@ -9,7 +9,7 @@
   <body>
     <h1>LOL Champions</h1>
     <div class="filter">
-      <input type="text" id="iFilter" placeholder="Filter" />
+      <input type="text" id="iFilter" placeholder="Filter by name" />
     </div>
     <div id="champions">
       <!-- <div class="champion">
@@ -44,7 +44,7 @@
   function processChampions(data) {
     arrayChampions = data;
     arrayChampions.forEach((champion) => {
-      createRow(champion.icon, champion.name, champion.title);
+      createRow(champion.icon, champion.name, champion.title, champion.key);
     });
   }
 
@@ -58,14 +58,14 @@
     let text = document.querySelector("#iFilter").value.toLowerCase();
     // console.log('text: ' + text);
 
-    let filteredChampions = arrayChampions.filter(champion => {
+    let filteredChampions = arrayChampions.filter((champion) => {
       return champion.name.toLowerCase().startsWith(text);
     });
     // console.log('filteredChampions: ' + filteredChampions);
 
     document.querySelector("#champions").innerHTML = "";
-    filteredChampions.forEach(champion => {
-      createRow(champion.icon, champion.name, champion.title);
+    filteredChampions.forEach((champion) => {
+      createRow(champion.icon, champion.name, champion.title, champion.key);
     });
   });
 </script>

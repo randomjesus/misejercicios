@@ -33,8 +33,8 @@ function createRow(image, name, title, key, tags) {
   //   <div class="tags">["Fighter", "Tank"]</div>
   let divTags = document.createElement("div");
   divTags.classList.add("tags");
-  divTags.appendChild(document.createTextNode(`Tags: ${tags.join(', ')}`))
-  divDescription.appendChild(divTags)
+  divTags.appendChild(document.createTextNode(`Tags: ${tags.join(", ")}`));
+  divDescription.appendChild(divTags);
   //hr
   // document
   //   .querySelector("#champions")

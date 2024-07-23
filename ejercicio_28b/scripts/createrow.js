@@ -1,4 +1,4 @@
-function createRow(image, name, title, key) {
+function createRow(image, name, title, key, tags) {
   // class champion
   let divChampion = document.createElement("div");
   divChampion.classList.add("champion");
@@ -30,6 +30,11 @@ function createRow(image, name, title, key) {
   divKey.classList.add("key");
   divKey.appendChild(document.createTextNode(`Key: ${key}`));
   divDescription.appendChild(divKey);
+  //   <div class="tags">["Fighter", "Tank"]</div>
+  let divTags = document.createElement("div");
+  divTags.classList.add("tags");
+  divTags.appendChild(document.createTextNode(`Tags: ${tags.join(', ')}`))
+  divDescription.appendChild(divTags)
   //hr
   // document
   //   .querySelector("#champions")

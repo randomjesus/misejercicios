@@ -44,7 +44,7 @@
   function processChampions(data) {
     arrayChampions = data;
     arrayChampions.forEach((champion) => {
-      createRow(champion.icon, champion.name, champion.title, champion.key);
+      createRow(champion.icon, champion.name, champion.title, champion.key, champion.tags);
     });
   }
 
@@ -65,7 +65,7 @@
 
     document.querySelector("#champions").innerHTML = "";
     filteredChampions.forEach((champion) => {
-      createRow(champion.icon, champion.name, champion.title, champion.key);
+      createRow(champion.icon, champion.name, champion.title, champion.key, champion.tags);
     });
   });
 </script>

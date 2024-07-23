@@ -65,7 +65,29 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
 
- 
+  .champion .key:hover {
+    background-color: #3a3a3a; /* Change to a lighter color on hover */
+    color: #ffffff; /* Change text color on hover */
+  } 
+
+  .champion .tags {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #a0a0a0;
+    font-size: 15px;
+    background-color: #0f0f0f; /* Slightly darker than background */
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+  }
+  
+  .champion .tags:hover {
+    background-color: #3a3a3a; /* Change to a lighter color on hover */
+    color: #ffffff; /* Change text color on hover */
+  } 
+
 .filter {
   display: flex;
   justify-content: center;
